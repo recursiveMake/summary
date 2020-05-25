@@ -1,36 +1,25 @@
 # summary
 
-FIXME: description
+A text summarization jar.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download from https://github.com/recursiveMake/summary
 
 ## Usage
 
-FIXME: explanation
+Run with:
 
-    $ java -jar summary-0.1.0-standalone.jar [args]
+    $ java -jar summary-0.1.0-standalone.jar [OPTIONS]
 
 ## Options
 
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+`-f FILE` File to summarize
+`-l LIMIT` Lines to limit text
 
 ## License
 
-Copyright © 2020 FIXME
+Copyright © 2020
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
