@@ -5,22 +5,6 @@
            [org.apache.lucene.analysis.en EnglishAnalyzer]
            [org.apache.lucene.analysis.tokenattributes CharTermAttribute]))
 
-(defn clean-text
-  "Remove punctuation from words"
-  [text]
-  (-> text
-      (str/lower-case)
-      (str/replace #"[\-']" "")
-      (str/replace #"[^A-Za-z0-9]" " ")))
-
-;; (defn split-word
-;;   "Split text in words"
-;;   [text]
-;;   (-> text
-;;       (clean-text)
-;;       (str/split #" ")
-;;       (#(remove str/blank? %))))
-
 (defn split-word
   "Tokeninze and de-stem text"
   [text]
@@ -37,13 +21,6 @@
       (finally
         (.end token-stream)
         (.close token-stream)))))
-
-;; (defn split-sentence
-;;   "Split text into sentences"
-;;   [text]
-;;   (->> text
-;;        (#(str/split % #"\."))
-;;        (remove str/blank?)))
 
 (defn split-sentence
   "Split text into sentences"
