@@ -27,3 +27,18 @@
   (let [frequencies (word-frequency text)
         paragraphs (make-paragraphs text frequencies)]
     (Document. paragraphs)))
+
+(defn get-sentences
+  "Get significant sentences from a document"
+  ([document]
+   (->> document
+        (:paragraphs)
+        (map :sentences)
+        (flatten)))
+  ([document limit]
+   (let [sentences (get-sentences document)
+         scores (map :score sentences)
+         threshold (last (take limit (reverse (sort scores))))]
+     (->> sentences
+          (filter #(>= (:score %) threshold))
+          (take limit)))))
