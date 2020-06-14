@@ -13,7 +13,7 @@
   (let [text (slurp filename)
         document (make-document text)
         sentences (get-sentences document limit)]
-    (doall (map #(println (:text %)) sentences))))
+    (run! #(println (:text %)) sentences)))
 
 (defn -main
   "Run based on user spec"
